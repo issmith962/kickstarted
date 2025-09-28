@@ -178,6 +178,10 @@ vim.keymap.set({ 'i', 'c' }, '<C-BS>', '<C-w>', { noremap = true })
 vim.keymap.set('i', '<C-h>', '<C-w>', { noremap = true })
 vim.keymap.set('i', '<C-w>', '<Nop>', { noremap = true })
 
+-- Use gh and gl to nav tabs instead of gt gT
+vim.keymap.set('n', 'gh', 'gT', { noremap = true })
+vim.keymap.set('n', 'gl', 'gt', { noremap = true })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -1008,6 +1012,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>-', require('oil').toggle_float)
     end,
   },
+
+  {},
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
