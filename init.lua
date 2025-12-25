@@ -178,9 +178,20 @@ vim.keymap.set({ 'i', 'c' }, '<C-BS>', '<C-w>', { noremap = true })
 vim.keymap.set('i', '<C-h>', '<C-w>', { noremap = true })
 vim.keymap.set('i', '<C-w>', '<Nop>', { noremap = true })
 
--- Use gh and gl to nav tabs instead of gt gT
-vim.keymap.set('n', 'gh', 'gT', { noremap = true })
-vim.keymap.set('n', 'gl', 'gt', { noremap = true })
+-- Paste without overwrite yank reg
+vim.keymap.set('x', '<leader>p', '"_dP', { noremap = true })
+
+-- Delete without overwrite yank reg
+vim.keymap.set('n', '<leader>d', '"_d', { noremap = true })
+vim.keymap.set('x', '<leader>d', '"_d', { noremap = true })
+
+-- Use gh and gl to nav buffers
+vim.keymap.set('n', 'gh', '<cmd>bprevious<CR>', { noremap = true })
+vim.keymap.set('n', 'gl', '<cmd>bnext<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>bd', '<cmd>bd<CR>', { noremap = true })
+
+-- Save shortcut
+vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { noremap = true })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -951,7 +962,7 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+    -- main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
