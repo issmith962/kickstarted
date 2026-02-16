@@ -124,9 +124,11 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 
--- Try to standardize my tab-widths?
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
+-- Try to get tabs as spaces and use 4-wide
+vim.o.expandtab = true -- expand tab input with spaces characters
+vim.o.smartindent = true -- syntax aware indentations for newline inserts
+vim.o.tabstop = 4 -- num of space characters per tab
+vim.o.shiftwidth = 4 -- spaces per indentation level
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
