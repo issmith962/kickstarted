@@ -938,7 +938,8 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_disable_italic_comment = 1
+      vim.g.gruvbox_material_enable_italic = 0
       vim.g.gruvbox_material_background = 'medium'
       vim.g.gruvbox_material_foreground = 'material'
       vim.cmd.colorscheme 'gruvbox-material'
