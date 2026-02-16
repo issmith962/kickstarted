@@ -942,6 +942,8 @@ require('lazy').setup({
       vim.g.gruvbox_material_enable_italic = 0
       vim.g.gruvbox_material_background = 'medium'
       vim.g.gruvbox_material_foreground = 'material'
+      -- Transparent bg
+      --vim.g.gruvbox_material_transparent_background = 2
       vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
